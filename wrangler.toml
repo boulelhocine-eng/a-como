@@ -1,0 +1,20 @@
+name = "a-como"
+type = "javascript"
+account_id = ""
+workers_dev = true
+
+[build]
+command = "npm run build"
+cwd = "."
+watch_paths = ["src/**/*.ts", "src/**/*.tsx"]
+
+[build.upload]
+format = "service-worker"
+
+[[routes]]
+pattern = "*"
+zone_name = ""
+custom_domain = true
+
+[env.production]
+route = "acomo.pages.dev/*"
